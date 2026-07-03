@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gomoku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="logo">Gomoku<span>Pro</span></div>
+      <div class="top-actions">
+        <button id="resetBtn" class="btn primary">New Game</button>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      <section class="board-card">
+        <div class="board-header">
+          <h1>Gomoku</h1>
+          <p class="subtitle">Five in a row wins. Black starts.</p>
+        </div>
+
+        <div id="statusBar" class="status-bar">
+          Turn: <span id="currentPlayerLabel">Black ●</span>
+        </div>
+
+        <div id="board" class="board"></div>
+      </section>
+
+      <aside class="side-panel">
+        <div class="panel-card">
+          <h2>Game Info</h2>
+          <ul class="info-list">
+            <li><strong>Mode:</strong> Local 2-player</li>
+            <li><strong>Board:</strong> 15 X 15</li>
+            <li><strong>Rule:</strong> First to 5 in a row wins</li>
+          </ul>
+        </div>
+
+        <div class="panel-card">
+          <h2>Controls</h2>
+          <p>• Click on an empty intersection to place a stone.</p>
+          <p>• Black always moves first.</p>
+          <p>• Click <strong>New Game</strong> to reset the board.</p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
