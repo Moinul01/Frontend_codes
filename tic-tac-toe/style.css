@@ -1,0 +1,108 @@
+:root{
+    --neon-blue:#00f3ff;
+    --neon-pink:#ff0055;
+    --bg-dark:#050505;
+
+}
+body{
+    background: var(--bg-dark) ;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    margin; 0;
+
+}
+
+.title-wrapper{
+    margin-bottom: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    margin-bottom:40px;
+    z-index: 10;
+}
+
+.game-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,120px);
+    grid-template-rows: repeat(3,120px);
+    gap:15px;
+    background:rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px;
+}
+
+.cell{
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid rgba(255,255,255,0.1);
+    font-size: 3rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition:all 0.3s cubic-bezier(0.175,0.0885,0.32,1.275);
+
+}
+
+.cell:hover{
+    background-color: rgba(255,255,255,0.08);
+    transform: scale(1.05)translateZ(10px);
+}
+
+.cell.x{
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.cell.o{
+    color: var(--neon-pink);
+    text-shadow: 0 0 15px var(--neon-pink);
+
+}
+
+.cell.winner{
+    animation: winPulse 0.5s infinite alternate;
+    background: rgba(255,255,255,0.1);
+}
+
+@keyframes winPulse{
+    from(transform: scale(1); box-shadow: 0 0 10px currentColor;)
+    to(transoform: scale(1.1); box-shadow: 0 0 30px currenColor;)
+}
+
+#resetbtn{
+    margin-top: 40px;
+    padding: 12px 30px;
+    background: transparent ;
+    border:2px solid var(--neon-blue);
+    color:var(--neon-blue);
+    font-weight:bold;
+    letter-spacing: 2px;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+
+#resetbtn:hover{
+    background: var(--neon-blue);
+    color:black;
+    box-shadow:  0 0 20px var(--neon-blue);
+}
